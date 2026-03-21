@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Public repositories from the Dave City GitHub organization.">
+  <title>Repositories — Dave City</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/215425886?v=4&s=32" type="image/png">
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/215425886?v=4&s=180">
+  <meta property="og:title" content="Repositories — Dave City">
+  <meta property="og:description" content="Public repositories from the Dave City GitHub organization.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/215425886?v=4&s=400">
+  <meta property="og:url" content="https://dc.seedy.cc/repos.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="alternate" type="application/rss+xml" title="Dave City RSS Feed" href="https://dc.seedy.cc/feed.xml">
+  <style>
+    /* === Page Header === */
+    .page-header {
+      background: linear-gradient(160deg, var(--ca-indigo-dark) 0%, var(--ca-violet) 50%, var(--ca-indigo) 100%);
+      color: var(--ca-gray-50);
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .page-header p {
+      font-size: 1.15rem;
+      max-width: 36rem;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* === Repo Cards === */
+    .repos-section { padding: 4rem 0; }
+    .repo-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr)); gap: 1.5rem; max-width: 64rem; margin: 0 auto; }
+    .repo-card {
+      background: var(--ca-white);
+      border: 1px solid var(--ca-gray-200);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .repo-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+    .repo-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--ca-gray-900);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .repo-name a {
+      color: var(--ca-indigo-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .repo-name a:hover { text-decoration-thickness: 2px; }
+    .repo-desc {
+      color: var(--ca-gray-700);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    .repo-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--ca-gray-700);
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .repo-meta span { display: inline-flex; align-items: center; gap: 0.25rem; }
+    .lang-dot { width: 0.75rem; height: 0.75rem; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .repo-topics { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+    .topic-tag { background: var(--ca-gray-100); color: var(--ca-indigo-light); padding: 0.125rem 0.5rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 500; }
+    .repo-contribute { margin-top: 0.75rem; font-size: 0.8rem; color: var(--ca-gray-700); opacity: 0.8; }
+    .repo-contribute a { color: var(--ca-indigo-light); }
+
+    /* === Loading / Error === */
+    .loading { text-align: center; padding: 4rem 0; color: var(--ca-gray-700); font-size: 1.1rem; }
+    .error { text-align: center; padding: 4rem 0; color: #b91c1c; font-size: 1.1rem; }
+
+    /* === Footer === */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 48rem) {
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .page-header { padding: 3rem 0 2rem; }
+      .repo-list { grid-template-columns: 1fr; }
+    }
+    .footer-logo { font-size: 1.15rem; font-weight: 700; color: var(--ca-gray-50); }
+    .footer-tagline { color: #9ca3af; font-size: 0.9rem; margin-top: 0.25rem; }
+    .footer-column h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem; }
+    .footer-column .footer-links { list-style: none; }
+    .footer-column .footer-links li { margin-bottom: 0.4rem; }
+    .footer-column .footer-links a { color: #9ca3af; text-decoration: none; font-size: 0.9rem; transition: color var(--transition); }
+    .footer-column .footer-links a:hover { color: var(--ca-emerald-light); }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Dave City home">
+      <img class="logo-mark" src="https://avatars.githubusercontent.com/u/215425886?v=4&s=80" alt="" width="40" height="40" loading="eager">
+      <span class="logo-text">Dave City</span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="news.html">News</a></li>
+        <li><a href="repos.html" aria-current="page">Repositories</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://www.youtube.com/channel/UCGBiNqgNTsNUgRkUvAr4jWA">YouTube</a></li>
+        <li><a href="https://github.com/dave-city">GitHub</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+      <span class="icon-sun" aria-hidden="true">&#9728;&#65039;</span>
+      <span class="icon-moon" aria-hidden="true">&#9790;&#65039;</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="page-header">
+  <div class="container">
+    <h1>Repositories</h1>
+    <p>Open source projects from the Dave City organization on GitHub.</p>
+  </div>
+</div>
+
+<section class="repos-section">
+  <div class="container">
+    <div id="repo-container" aria-live="polite">
+      <p class="loading" role="status">Loading repositories&hellip;</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Dave City</span>
+        <p class="footer-tagline">The Dave Madson community site.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Site</h3>
+        <ul class="footer-links">
+          <li><a href="news.html">News</a></li>
+          <li><a href="repos.html">Repositories</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="feed.xml">RSS Feed</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Elsewhere</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.youtube.com/channel/UCGBiNqgNTsNUgRkUvAr4jWA">YouTube</a></li>
+          <li><a href="https://github.com/dave-city">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; Dave Madson Entertainment Inc.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var ORG = "dave-city";
+  var API_URL = "https://api.github.com/orgs/" + encodeURIComponent(ORG) + "/repos?type=public&sort=updated&per_page=100";
+
+  var LANG_COLORS = {
+    JavaScript: "#f1e05a",
+    TypeScript: "#3178c6",
+    Python: "#3572a5",
+    HTML: "#e34c26",
+    CSS: "#563d7c",
+    Shell: "#89e051",
+    Ruby: "#701516",
+    Go: "#00add8",
+    Rust: "#dea584"
+  };
+
+  function escapeHTML(str) {
+    if (!str) return "";
+    var div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  function renderRepos(repos) {
+    var container = document.getElementById("repo-container");
+
+    var HIDDEN_REPOS = [".github"];
+
+    var publicRepos = repos.filter(function (r) {
+      return !r.private && !r.archived && HIDDEN_REPOS.indexOf(r.name) === -1;
+    });
+
+    if (publicRepos.length === 0) {
+      container.innerHTML = '<p class="error" role="alert">No public repositories found.</p>';
+      return;
+    }
+
+    publicRepos.sort(function (a, b) {
+      if (b.stargazers_count !== a.stargazers_count) {
+        return b.stargazers_count - a.stargazers_count;
+      }
+      return new Date(b.updated_at) - new Date(a.updated_at);
+    });
+
+    var status = document.createElement("p");
+    status.setAttribute("role", "status");
+    status.className = "sr-only";
+    status.textContent = publicRepos.length + " public repositories loaded.";
+
+    var list = document.createElement("ul");
+    list.className = "repo-list";
+    list.setAttribute("aria-label", "Public repositories");
+
+    publicRepos.forEach(function (repo) {
+      var li = document.createElement("li");
+      li.className = "repo-card";
+
+      var name = '<h2 class="repo-name"><a href="' + escapeHTML(repo.html_url) + '">' + escapeHTML(repo.name) + '</a></h2>';
+
+      var desc = repo.description
+        ? '<p class="repo-desc">' + escapeHTML(repo.description) + '</p>'
+        : '<p class="repo-desc" style="font-style:italic;opacity:0.6;">No description provided.</p>';
+
+      var meta = '<div class="repo-meta">';
+
+      if (repo.language) {
+        var color = LANG_COLORS[repo.language] || "#888";
+        meta += '<span><span class="lang-dot" style="background:' + escapeHTML(color) + '" aria-hidden="true"></span> ' + escapeHTML(repo.language) + '</span>';
+      }
+
+      meta += '<span aria-label="' + repo.stargazers_count + ' stars">&#9733; ' + repo.stargazers_count + '</span>';
+      meta += '<span aria-label="' + repo.forks_count + ' forks">&#9906; ' + repo.forks_count + '</span>';
+
+      if (repo.license && repo.license.spdx_id && repo.license.spdx_id !== "NOASSERTION") {
+        meta += '<span aria-label="License: ' + escapeHTML(repo.license.spdx_id) + '">&#9878; ' + escapeHTML(repo.license.spdx_id) + '</span>';
+      }
+
+      meta += '</div>';
+
+      var topics = '';
+      if (repo.topics && repo.topics.length > 0) {
+        topics = '<div class="repo-topics" aria-label="Topics">';
+        repo.topics.forEach(function (t) {
+          topics += '<span class="topic-tag">' + escapeHTML(t) + '</span>';
+        });
+        topics += '</div>';
+      }
+
+      li.innerHTML = name + desc + meta + topics
+        + '<p class="repo-contribute">Contributions welcome via <a href="' + escapeHTML(repo.html_url) + '/pulls">pull request</a>.</p>';
+      list.appendChild(li);
+    });
+
+    container.innerHTML = "";
+    container.appendChild(status);
+    container.appendChild(list);
+  }
+
+  function showError(message) {
+    var container = document.getElementById("repo-container");
+    container.innerHTML = '<p class="error" role="alert">' + escapeHTML(message) + '</p>';
+  }
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", API_URL);
+  xhr.setRequestHeader("Accept", "application/vnd.github.mercy-preview+json");
+  xhr.onload = function () {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      try {
+        var data = JSON.parse(xhr.responseText);
+        renderRepos(data);
+      } catch (e) {
+        showError("Failed to parse repository data.");
+      }
+    } else if (xhr.status === 403) {
+      showError("GitHub API rate limit reached. Please try again later.");
+    } else {
+      showError("Failed to load repositories (HTTP " + xhr.status + ").");
+    }
+  };
+  xhr.onerror = function () {
+    showError("Network error. Could not reach GitHub.");
+  };
+  xhr.send();
+})();
+</script>
+</body>
+</html>

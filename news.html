@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="News and videos from Dave Madson Entertainment Inc.">
+  <title>News — Dave City</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/215425886?v=4&s=32" type="image/png">
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/215425886?v=4&s=180">
+  <meta property="og:title" content="News — Dave City">
+  <meta property="og:description" content="News and videos from Dave Madson Entertainment Inc.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/215425886?v=4&s=400">
+  <meta property="og:url" content="https://dc.seedy.cc/news.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="alternate" type="application/rss+xml" title="Dave City RSS Feed" href="https://dc.seedy.cc/feed.xml">
+  <style>
+    /* === Page Header === */
+    .page-header {
+      background: linear-gradient(160deg, var(--ca-indigo-dark) 0%, var(--ca-violet) 50%, var(--ca-indigo) 100%);
+      color: var(--ca-gray-50);
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .page-header p {
+      font-size: 1.15rem;
+      max-width: 36rem;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* === News List (uses shared .news-grid / .news-card from styles.css) === */
+    .news-list-section { padding: 4rem 0; }
+
+    /* === Single Post === */
+    .post-content {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 3rem 0 5rem;
+    }
+    .post-content .post-back {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: var(--ca-indigo-light);
+      text-decoration: underline;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .post-content .post-back:hover { text-decoration-thickness: 2px; }
+    .post-content h1 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--ca-gray-900);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .post-content .post-meta {
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ca-gray-700);
+    }
+    .post-content .post-date { color: var(--ca-indigo-light); }
+    .post-content .post-type { color: var(--ca-gray-700); }
+    .post-body h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--ca-gray-900);
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    .post-body h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ca-gray-900);
+      margin: 2rem 0 0.75rem;
+    }
+    .post-body p {
+      color: var(--ca-gray-700);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .post-body ul, .post-body ol {
+      margin: 1rem 0 1.25rem 1.5rem;
+      color: var(--ca-gray-700);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .post-body li { margin-bottom: 0.5rem; }
+    .post-body strong { color: var(--ca-gray-900); }
+    .post-body a { color: var(--ca-indigo-light); text-decoration: underline; text-underline-offset: 2px; }
+    .post-body a:hover { text-decoration-thickness: 2px; }
+    .post-body code {
+      font-family: var(--font-mono);
+      background: var(--ca-gray-100);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .post-body pre {
+      background: var(--ca-gray-900);
+      color: #e2e8f0;
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 1.5rem 0;
+    }
+    .post-body pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: inherit;
+      color: inherit;
+    }
+    @media (prefers-color-scheme: dark) {
+      .post-body pre { background: #0f172a; border: 1px solid var(--ca-gray-200); }
+    }
+    .post-body blockquote {
+      border-left: 4px solid var(--ca-indigo-light);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: var(--ca-gray-50);
+      border-radius: 0 8px 8px 0;
+    }
+    .post-body blockquote p { margin-bottom: 0; }
+    .post-body hr {
+      border: none;
+      border-top: 1px solid var(--ca-gray-200);
+      margin: 2rem 0;
+    }
+
+    /* === Pagination === */
+    .pagination {
+      max-width: 52rem;
+      margin: 0 auto 3rem;
+      padding-top: 1rem;
+    }
+    .pagination-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .pagination-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.75rem;
+      height: 2.75rem;
+      padding: 0.5rem 0.85rem;
+      border: 2px solid var(--ca-gray-200);
+      border-radius: 8px;
+      background: var(--ca-white);
+      color: var(--ca-gray-800);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+    }
+    .pagination-btn:hover {
+      background: var(--ca-gray-100);
+      border-color: var(--ca-indigo-light);
+      color: var(--ca-indigo-light);
+    }
+    .pagination-btn[aria-current="page"] {
+      background: var(--ca-indigo);
+      border-color: var(--ca-indigo);
+      color: var(--ca-gray-50);
+      cursor: default;
+    }
+    @media (prefers-color-scheme: dark) {
+      .pagination-btn[aria-current="page"] {
+        background: var(--ca-indigo-light);
+        border-color: var(--ca-indigo-light);
+        color: #1e1b4b;
+      }
+    }
+    .pagination-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+    .pagination-btn:disabled:hover {
+      background: var(--ca-white);
+      border-color: var(--ca-gray-200);
+      color: var(--ca-gray-800);
+    }
+    .pagination-ellipsis {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      height: 2.75rem;
+      color: var(--ca-gray-700);
+      font-weight: 600;
+      user-select: none;
+    }
+
+    /* === Loading === */
+    .loading {
+      text-align: center;
+      padding: 4rem 0;
+      color: var(--ca-gray-700);
+      font-size: 1.1rem;
+    }
+
+    /* === Footer === */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 48rem) {
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .page-header { padding: 3rem 0 2rem; }
+      .post-content { padding: 2rem 0 3rem; }
+    }
+    .footer-logo { font-size: 1.15rem; font-weight: 700; color: var(--ca-gray-50); }
+    .footer-tagline { color: #9ca3af; font-size: 0.9rem; margin-top: 0.25rem; }
+    .footer-column h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem; }
+    .footer-column .footer-links { list-style: none; }
+    .footer-column .footer-links li { margin-bottom: 0.4rem; }
+    .footer-column .footer-links a { color: #9ca3af; text-decoration: none; font-size: 0.9rem; transition: color var(--transition); }
+    .footer-column .footer-links a:hover { color: var(--ca-emerald-light); }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Dave City home">
+      <img class="logo-mark" src="https://avatars.githubusercontent.com/u/215425886?v=4&s=80" alt="" width="40" height="40" loading="eager">
+      <span class="logo-text">Dave City</span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="news.html" aria-current="page">News</a></li>
+        <li><a href="repos.html">Repositories</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://www.youtube.com/channel/UCGBiNqgNTsNUgRkUvAr4jWA">YouTube</a></li>
+        <li><a href="https://github.com/dave-city">GitHub</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+      <span class="icon-sun" aria-hidden="true">&#9728;&#65039;</span>
+      <span class="icon-moon" aria-hidden="true">&#9790;&#65039;</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<div id="page-header-region" class="page-header">
+  <div class="container">
+    <h1>News</h1>
+    <p>Videos, updates, and announcements from Dave Madson Entertainment Inc.</p>
+  </div>
+</div>
+  <div class="container">
+    <div id="news-content">
+      <p class="loading">Loading posts...</p>
+    </div>
+    <div class="sr-only" aria-live="polite" id="news-status"></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Dave City</span>
+        <p class="footer-tagline">The Dave Madson community site.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Site</h3>
+        <ul class="footer-links">
+          <li><a href="news.html">News</a></li>
+          <li><a href="repos.html">Repositories</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="feed.xml">RSS Feed</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Elsewhere</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.youtube.com/channel/UCGBiNqgNTsNUgRkUvAr4jWA">YouTube</a></li>
+          <li><a href="https://github.com/dave-city">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; Dave Madson Entertainment Inc.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // Simple markdown to HTML converter
+  function md(text) {
+    var lines = text.split('\n');
+    var titleLine = -1;
+    for (var i = 0; i < lines.length; i++) {
+      if (lines[i].match(/^# /)) { titleLine = i; break; }
+    }
+    if (titleLine >= 0) lines.splice(titleLine, 1);
+    text = lines.join('\n');
+
+    var html = text
+      .replace(/```(\w*)\n([\s\S]*?)```/g, function (m, lang, code) {
+        return '<pre><code>' + code.replace(/</g, '&lt;').replace(/>/g, '&gt;').trim() + '</code></pre>';
+      })
+      .replace(/^---+$/gm, '<hr>')
+      .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+      .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+      .replace(/(^|[^"(])((https?:\/\/)[^\s<]+)/gm, '$1<a href="$2">$2</a>')
+      .replace(/^- (.+)$/gm, '<li>$1</li>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\n\n+/g, '\n\n');
+
+    html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, '<ul>$1</ul>');
+
+    var blocks = html.split('\n\n');
+    html = blocks.map(function (block) {
+      block = block.trim();
+      if (!block) return '';
+      if (block.match(/^<(h[23]|ul|ol|pre|blockquote|table|hr)/)) return block;
+      if (block.match(/^<li/)) return '<ul>' + block + '</ul>';
+      return '<p>' + block.replace(/\n/g, '<br>') + '</p>';
+    }).join('\n');
+
+    return html;
+  }
+
+  function formatDate(dateStr) {
+    var d = new Date(dateStr + 'T12:00:00');
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+  }
+
+  function getSlug() {
+    var hash = window.location.hash;
+    if (hash && hash.indexOf('#post/') === 0) return hash.substring(6);
+    return null;
+  }
+
+  var container = document.getElementById('news-content');
+  var headerRegion = document.getElementById('page-header-region');
+  var POSTS_PER_PAGE = 6;
+
+  function getCurrentPage() {
+    var params = new URLSearchParams(window.location.search);
+    var p = parseInt(params.get('page'), 10);
+    return (p && p > 0) ? p : 1;
+  }
+
+  function setPageURL(page) {
+    var url = new URL(window.location);
+    if (page <= 1) { url.searchParams.delete('page'); } else { url.searchParams.set('page', page); }
+    url.hash = '';
+    history.pushState(null, '', url);
+  }
+
+  function getPageRange(current, total) {
+    if (total <= 7) {
+      var arr = [];
+      for (var i = 1; i <= total; i++) arr.push(i);
+      return arr;
+    }
+    var pages = [1];
+    var start = Math.max(2, current - 1);
+    var end = Math.min(total - 1, current + 1);
+    if (start > 2) pages.push('...');
+    for (var j = start; j <= end; j++) pages.push(j);
+    if (end < total - 1) pages.push('...');
+    pages.push(total);
+    return pages;
+  }
+
+  fetch('posts/posts.json')
+    .then(function (r) { return r.json(); })
+    .then(function (rawPosts) {
+      var posts = rawPosts.map(function (p) {
+        return { date: p.date, sortKey: p.date, title: p.title, summary: p.summary, type: p.type || '', repo: '', slug: p.slug, url: '#post/' + p.slug };
+      });
+      posts.sort(function (a, b) { return b.sortKey.localeCompare(a.sortKey); });
+
+      function renderList() {
+        headerRegion.querySelector('h1').textContent = 'News';
+        document.title = 'News — Dave City';
+
+        if (posts.length === 0) {
+          container.innerHTML = '<p class="loading">No posts yet. Check back soon.</p>';
+          return;
+        }
+
+        var currentPage = getCurrentPage();
+        var totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+        if (currentPage > totalPages) currentPage = totalPages;
+        var startIdx = (currentPage - 1) * POSTS_PER_PAGE;
+        var pagePosts = posts.slice(startIdx, startIdx + POSTS_PER_PAGE);
+
+        var html = '<div class="news-list-section"><div class="news-grid">';
+        pagePosts.forEach(function (post) {
+          html += '<article class="news-card">';
+          html += '<div class="news-card-meta">';
+          html += '<time class="news-card-date" datetime="' + post.date + '">' + formatDate(post.date) + '</time>';
+          if (post.type) html += '<span class="news-badge news-badge-type">' + post.type + '</span>';
+          html += '</div>';
+          html += '<h2 class="news-card-title"><a href="' + post.url + '">' + post.title + '</a></h2>';
+          html += '<p class="news-card-summary">' + post.summary + '</p>';
+          html += '</article>';
+        });
+        html += '</div></div>';
+
+        if (totalPages > 1) {
+          html += '<nav class="pagination" aria-label="News pagination"><ul class="pagination-list">';
+          html += '<li><button class="pagination-btn" data-page="' + (currentPage - 1) + '"' + (currentPage === 1 ? ' disabled' : '') + ' aria-label="Previous page">Previous</button></li>';
+          var range = getPageRange(currentPage, totalPages);
+          range.forEach(function (p) {
+            if (p === '...') {
+              html += '<li><span class="pagination-ellipsis" aria-hidden="true">&hellip;</span></li>';
+            } else {
+              html += '<li><button class="pagination-btn" data-page="' + p + '"' + (p === currentPage ? ' aria-current="page"' : '') + ' aria-label="Page ' + p + '">' + p + '</button></li>';
+            }
+          });
+          html += '<li><button class="pagination-btn" data-page="' + (currentPage + 1) + '"' + (currentPage === totalPages ? ' disabled' : '') + ' aria-label="Next page">Next</button></li>';
+          html += '</ul></nav>';
+        }
+
+        container.innerHTML = html;
+
+        container.querySelectorAll('.pagination-btn[data-page]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if (btn.disabled) return;
+            var page = parseInt(btn.getAttribute('data-page'), 10);
+            if (page === currentPage) return;
+            setPageURL(page);
+            renderList();
+            window.scrollTo(0, 0);
+            var active = container.querySelector('.pagination-btn[aria-current="page"]');
+            if (active) active.focus();
+          });
+        });
+
+        var ns = document.getElementById('news-status');
+        if (ns) ns.textContent = 'Page ' + currentPage + ' of ' + totalPages + ', showing ' + pagePosts.length + ' articles';
+      }
+
+      function renderPost(slug) {
+        var post = null;
+        for (var i = 0; i < posts.length; i++) {
+          if (posts[i].slug && posts[i].slug === slug) { post = posts[i]; break; }
+        }
+        if (!post) {
+          container.innerHTML = '<div class="post-content"><p>Post not found. <a href="news.html">Back to News</a></p></div>';
+          return;
+        }
+
+        document.title = post.title + ' — Dave City';
+        headerRegion.querySelector('h1').textContent = post.type || 'News';
+
+        container.innerHTML = '<div class="post-content"><p class="loading">Loading article...</p></div>';
+
+        fetch('posts/' + slug + '.md')
+          .then(function (r) { return r.text(); })
+          .then(function (text) {
+            var titleMatch = text.match(/^# (.+)$/m);
+            var title = titleMatch ? titleMatch[1] : post.title;
+
+            var html = '<article class="post-content">';
+            html += '<a href="news.html" class="post-back">Back to News</a>';
+            html += '<h1>' + title + '</h1>';
+            html += '<p class="post-meta"><time class="post-date" datetime="' + post.date + '">' + formatDate(post.date) + '</time>';
+            if (post.type) html += ' <span class="post-type">' + post.type + '</span>';
+            html += '</p>';
+            html += '<div class="post-body">' + md(text) + '</div>';
+            html += '</article>';
+            container.innerHTML = html;
+            var heading = container.querySelector('h1');
+            if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus(); }
+            var ns = document.getElementById('news-status');
+            if (ns) ns.textContent = 'Loaded: ' + title;
+            window.scrollTo(0, 0);
+          })
+          .catch(function () {
+            container.innerHTML = '<div class="post-content"><p>Error loading article. <a href="news.html">Back to News</a></p></div>';
+          });
+      }
+
+      function route() {
+        var slug = getSlug();
+        if (slug) { renderPost(slug); } else { renderList(); }
+      }
+
+      route();
+      window.addEventListener('hashchange', route);
+      window.addEventListener('popstate', function () { if (!getSlug()) renderList(); });
+    })
+    .catch(function () {
+      container.innerHTML = '<p class="loading">Unable to load posts. Please try again later.</p>';
+    });
+})();
+</script>
+
+<script src="main.js"></script>
+
+</body>
+</html>

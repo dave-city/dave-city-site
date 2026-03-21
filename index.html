@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dave City — The community site for Dave Madson, the logo blooper pioneer. Videos, resources, and more.">
+  <title>Dave City — The Dave Madson Community Site</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/215425886?v=4&s=32" type="image/png">
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/215425886?v=4&s=180">
+  <meta property="og:title" content="Dave City — The Dave Madson Community Site">
+  <meta property="og:description" content="Dave City — The community site for Dave Madson, the logo blooper pioneer. Videos, resources, and more.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/215425886?v=4&s=400">
+  <meta property="og:url" content="https://dc.seedy.cc/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="alternate" type="application/rss+xml" title="Dave City RSS Feed" href="https://dc.seedy.cc/feed.xml">
+  <style>
+    /* === Limit news to 3 visible cards on home page === */
+    #latest-news .news-card:nth-child(n+4) { display: none; }
+
+    /* === Footer Grid === */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 48rem) {
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .footer-logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ca-gray-50);
+    }
+    .footer-tagline {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+    .footer-column h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.75rem;
+    }
+    .footer-column .footer-links {
+      list-style: none;
+    }
+    .footer-column .footer-links li {
+      margin-bottom: 0.4rem;
+    }
+    .footer-column .footer-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color var(--transition);
+    }
+    .footer-column .footer-links a:hover {
+      color: var(--ca-emerald-light);
+    }
+
+    /* === YouTube CTA === */
+    .yt-cta {
+      text-align: center;
+      padding: 3rem 0;
+    }
+    .yt-cta h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 800;
+      color: var(--ca-gray-900);
+      margin-bottom: 1rem;
+    }
+    .yt-cta p {
+      font-size: 1.1rem;
+      color: var(--ca-gray-700);
+      max-width: 36rem;
+      margin: 0 auto 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Dave City home">
+      <img class="logo-mark" src="https://avatars.githubusercontent.com/u/215425886?v=4&s=80" alt="" width="40" height="40" loading="eager">
+      <span class="logo-text">Dave City</span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="news.html">News</a></li>
+        <li><a href="repos.html">Repositories</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://www.youtube.com/channel/UCGBiNqgNTsNUgRkUvAr4jWA">YouTube</a></li>
+        <li><a href="https://github.com/dave-city">GitHub</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+      <span class="icon-sun" aria-hidden="true">&#9728;&#65039;</span>
+      <span class="icon-moon" aria-hidden="true">&#9790;&#65039;</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="container">
+    <h1>The Logo Blooper <span class="hero-accent">Pioneer</span></h1>
+    <p>Welcome to Dave City, the community site for Dave Madson Entertainment Inc. Since 2011, Dave has been bringing the community weird and funny bloopers of classic television and film logos. Check out the latest videos and projects below.</p>
+    <div class="hero-actions">
+      <a href="https://www.youtube.com/channel/UCGBiNqgNTsNUgRkUvAr4jWA" class="btn btn-primary">Watch on YouTube</a>
+      <a href="news.html" class="btn btn-outline">Latest Videos</a>
+    </div>
+  </div>
+</section>
+
+<section id="news" class="changelog-section bg-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Latest Videos</h2>
+      <p>Recent uploads from the Dave Madson Entertainment Inc. YouTube channel.</p>
+    </div>
+    <div id="latest-news">
+      <p style="text-align:center; color: var(--ca-gray-700);">Loading videos&hellip;</p>
+    </div>
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="news.html" class="btn btn-outline" style="color: var(--ca-gray-800); border-color: var(--ca-gray-200);">View All Videos &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="yt-cta">
+  <div class="container">
+    <h2>Subscribe on YouTube</h2>
+    <p>The Dave Madson Entertainment Inc. channel is home to logo bloopers of Looney Tunes, Merrie Melodies, Viacom, Screen Gems, PBS, CBS, NET and many more, featuring Microsoft Sam and a cast of text-to-speech characters.</p>
+    <a href="https://www.youtube.com/channel/UCGBiNqgNTsNUgRkUvAr4jWA" class="btn btn-primary">Visit the Channel</a>
+  </div>
+</section>
+
+<section id="projects" class="bg-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Projects</h2>
+      <p>Open source tools and projects from Dave City on GitHub.</p>
+    </div>
+    <div class="repo-card" style="max-width:48rem; margin:0 auto; background:var(--ca-white); border:1px solid var(--ca-gray-200); border-radius:16px; padding:1.5rem;">
+      <div>
+        <h3 style="font-size:1.2rem; font-weight:800; color:var(--ca-gray-900); margin-bottom:0.5rem;">
+          <a href="https://github.com/dave-city/dave-city-site" style="color:var(--ca-indigo-light); text-decoration:underline;">dave-city-site</a>
+        </h3>
+        <p style="color:var(--ca-gray-700); font-size:0.95rem; line-height:1.6;">The source code for this very website &mdash; the Dave City community site.</p>
+      </div>
+    </div>
+    <p style="margin-top: 1.5rem; text-align: center;">
+      <a href="repos.html" class="btn btn-outline">Browse All Repositories</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Dave City</span>
+        <p class="footer-tagline">The Dave Madson community site.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Site</h3>
+        <ul class="footer-links">
+          <li><a href="news.html">News</a></li>
+          <li><a href="repos.html">Repositories</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="feed.xml">RSS Feed</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Elsewhere</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.youtube.com/channel/UCGBiNqgNTsNUgRkUvAr4jWA">YouTube</a></li>
+          <li><a href="https://github.com/dave-city">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; Dave Madson Entertainment Inc.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>

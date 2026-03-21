@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dave City</title>
+    <link>https://dc.seedy.cc</link>
+    <description>News and updates from Dave City, the community site for Dave Madson Entertainment Inc.</description>
+    <language>en-us</language>
+    <atom:link href="https://dc.seedy.cc/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Welcome to Dave City</title>
+      <link>https://dc.seedy.cc/news.html#post/welcome-to-dave-city</link>
+      <guid isPermaLink="true">https://dc.seedy.cc/news.html#post/welcome-to-dave-city</guid>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Welcome to Dave City, the new community site for Dave Madson Entertainment Inc. Here you will find the latest videos, community resources, and open source projects.</description>
+      <category>Announcement</category>
+    </item>
+  </channel>
+</rss>
