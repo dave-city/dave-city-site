@@ -16,11 +16,14 @@ jobs:
       - name: Check for new videos
         run: node .github/scripts/check-youtube.js
 
-      - name: Commit new posts
+      - name: Regenerate RSS feed
+        run: node .github/scripts/generate-feed.js
+
+      - name: Commit new posts and feed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add posts/
+          git add posts/ feed.xml
           git diff --cached --quiet && echo "No new videos" && exit 0
           git commit -m "feat: add new YouTube video(s)"
           git pull --rebase
