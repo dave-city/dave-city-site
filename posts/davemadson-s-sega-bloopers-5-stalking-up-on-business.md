@@ -1,0 +1,5 @@
+# davemadson's SEGA Bloopers 5: Stalking Up On Business
+
+[Some material may be considered unsuitable for younger viewers] In the wildest and craziest SEGA Blooper session to date, a stalker shows up looking for Punsutawney Haulden. Fourth Wall House Explosions: 3  Crotch Kicks: 1  Blooper Sense Signals: 1  Falls: 3  Ground Plants: 1  Zaps: 2   Ceiling Plants: 3  Tantrums: 1 Characters: Sam, Mike, Mary, Anna, Katelyn, Scotty, Jimmy, Hank, Guy, Harvey, Beulah, Abby, Rhonda, Lauren, Vulcie, Maggie, RoboSoft 3, RoboSoft 4, Fourth Wall House, SEGA Singers, Punxsutawney Hauldren, Punxsutawney Dr. Phil, Satan, Damien, Medusa, Evil Matt, Stalker Guy, Electra, Alex, Chloe, Matt, Sergeant Franklin D. Flanigan, Officer Vanessa Smith, PlayStation 2 Red Screen of Death, God Almighty, Matthias, Matt Crowley Singers, Dave and the davemadson singers. Software used: Wondershare Filmora, Corel PaintShop Pro 2018, Audacity, Balabolka, FakeYou and Discord. FOR ENTERTAINMENT PURPOSES ONLY. No copyright infringement is intended.  (Fair Use) DISCLAIMER: No rude or hateful comments will be accepted.
+
+[Watch the video on YouTube](https://www.youtube.com/watch?v=7ayN5g2SpKM)

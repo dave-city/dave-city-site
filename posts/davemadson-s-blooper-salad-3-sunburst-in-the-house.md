@@ -1,0 +1,5 @@
+# davemadson's Blooper Salad 3: Sunburst in the House
+
+[Some material may be considered unsuitable for younger viewers] Length 14 min 45 sec The 1960s Westinghouse tag and he 1976-82 CPT Sunburst ID are the ingredients in this blooper salad.  However, Helena and Bandita crash the feast with a not-so-very-appetizing dressing. Fourth Wall House Explosions: 2  Falls: 3  Zaps: 3  Crotch Kicks: 2  Rages: 1 Characters: Sam, Mike, Mary, Anna, Zira, MS David, Eva, Mark, Kitty, Natalie, Maya, Mitch, Nadine, Colleen, Cortana, Martina, Katelyn, Scotty, Jimmy, Hank, Tyler, Guy, Wally, Harvey, SIdney, Beulah, Abby, Rhonda, Rita, Lauren, Pamela, Vulcie, Maggie, RoboSoft 3, RoboSoft 4, Fourth Wall House, Donkey Kong, Puxsutawney Dr. Phil, Ubu the Dog, Helena, Bandita, God Almighty, Paloma, Dave and the davemadson singers. Software used: Wondershare Filmora, Corel PaintShop Pro 2018, Audacity and Balabolka FOR ENTERTAINMENT PURPOSES ONLY. No copyright infringement is intended.  (Fair Use) DISCLAIMER: No rude or hateful comments will be accepted.
+
+[Watch the video on YouTube](https://www.youtube.com/watch?v=vhTe064Qi84)

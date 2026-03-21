@@ -1,0 +1,5 @@
+# davemadson's NBC Bloopers 22: Snakes and Stones
+
+[Some material may be considered unsuitable for younger viewers] Length 13 min 12 sec Bloopers on the NBC Snake ID and run-ins with Rowena, Sylvia and Medusa. Tantrums: 1  Falls: 4  Ground Plants: 1  Ceiling Plants: 1  Rages: 1  Zaps: 5  Deflections: 1 Characters: Sam, Mike, Mary, Anna, Zira, MS David, Eva, Mark, Sarah, Linda, Kitty, Natalie, Maya, Mitch, Nadine, Colleen, Cortana, Martina, Katelyn, Scotty, Jimmy, Hank, Tyler, Guy, Wally, Harvey, Sidney, Beulah, Abby, Rhonda, Rita, Taylor, Harry, Lauren, Pamela, Michael, Michelle, NBC Snake, RoboSoft 3, RoboSoft 4, Rowena, Sylvia, Medusa, God Almighty, Paloma, Angelo, Angela, Dave and the davemadson singers. Software used: Wondershare Filmora, Corel PaintShop Pro 2018, Audacity and Balabolka. FOR ENTERTAINMENT PURPOSES ONLY. No copyright infringement is intended.  (Fair Use) DISCLAIMER: No rude or hateful comments will be accepted.
+
+[Watch the video on YouTube](https://www.youtube.com/watch?v=oKwcWUT9ggQ)

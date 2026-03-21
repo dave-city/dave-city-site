@@ -1,0 +1,5 @@
+# davemadson's NET Bloopers 19: If Globes Came In Bottles
+
+[Some material may be considered unsuitable for younger viewers] The gang attempts to get the NET Globe ID right, but Lucretia, Rowena and Sylvia show up, threatening the Ash Family and seeking to avenge the carpet shampooer treatment Punxsutawney Hauldren gave the Stalker Guy and Electra Shocker. Slaps: 1  Zaps: 6  Deflections: 1  Barfs: 1  Falls: 3  Brawls: 2 Characters: Sam, Mike, Mary, Anna, Zira, MS David, Eva, Mark, Sarah, Linda, Kitty, Natalie, Maya, Mitch, Nadine, Colleen, Cortana, Martina, Katelyn, Scotty, Jimmy, Hank, Guy, Wally, Harvey, Sidney, Beulah, Abby, Rhonda, Rita, Lauren, Vulcie, Maggie, Marina, Fred, Michael, Michelle, RoboSoft 3, RoboSoft 4, Luretia, Rowena, Sylvia, Electra, God Almighty, Paloma, Donkey Kong, Punxsutawney Dr. Phil, Dave and the davemadson singers. Software used: Wondershare Filmora, Corel PaintShop Pro 2018, Audacity and Balabolka. FOR ENTERTAINMENT PURPOSES ONLY. No copyright infringement is intended.  (Fair Use) DISCLAIMER: No rude or hateful comments will be accepted.
+
+[Watch the video on YouTube](https://www.youtube.com/watch?v=wvNwurCd1bQ)

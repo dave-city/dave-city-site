@@ -1,0 +1,5 @@
+# davemadson's LT Bloopers 284: Bloopers Held Hostage (Part 2)
+
+[Some material may be considered unsuitable for younger viewers] Length 18 min 27 sec [Part 2 of 2] Will Sam and Anna recover and return to the studio, or will the Evil Beings possess them?  This episode will tell. Judge M.L. Fairly comes out of retirement in this episode. Rages: 2  Quakes: 1  Zaps: 2  Falls: 1 Characters: Sam, Mike, Mary, Anna, Zira, MS David, Scotty, Jimmy, Hank, Tyler, Guy, Wally, Wally Sr. Wanda, Harvey, Sidney, Beulah, Abby, Rhonda, Lauren, Kenny, Inna, Kolya, Jazzi, Mario, Bubblegum, Stella, RoboSoft 3, RoboSoft 4, Judge M.L. Fairly, Sgt. Flanigan, Doctor Jade, Nurse Jasmine, Satan, Damien, Lucretia, Vulcanna, Magma, God Almighty, Matthias, Paloma, Vince McMahon, Dave and the davemadson singers. Software used: Wondershare FIlmora, Corel PaintShop Pro 2018, Audacity, Balabolka and Discord. FOR ENTERTAINMENT PURPOSES ONLY. No copyright infringement is intended.  (Fair Use) DISCLAIMER: No rude or hateful comments will be accepted.
+
+[Watch the video on YouTube](https://www.youtube.com/watch?v=GYrOnqfoF0I)

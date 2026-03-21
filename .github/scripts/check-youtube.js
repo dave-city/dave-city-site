@@ -53,7 +53,32 @@ function getFirstParagraph(description) {
     if (!trimmed || /^-{3,}/.test(trimmed)) break;
     paragraphLines.push(trimmed);
   }
-  return paragraphLines.join(' ').trim();
+  let text = paragraphLines.join(' ').trim();
+
+  // Strip content warnings in brackets at the start
+  text = text.replace(/^(\[.*?\]\s*)+/g, '');
+  // Strip "Length X min Y sec" prefix
+  text = text.replace(/^Length\s+\d+\s+min\s+\d+\s+sec\s*/i, '');
+  // Strip everything from stat counters onward (e.g. "Fourth Wall House Explosions: 2")
+  text = text.replace(/\s*(Fourth Wall House Explosions|Tantrums|Falls|Zaps|Crotch Kicks|Rages|Slaps|Facepalms|Deflections|Barfs|Brawls|Ground Plants|Ceiling Plants|Blooper Sense Signals|Roasts|Quakes|Tazings|Troll Faces|Beatings):.*$/i, '');
+  // Strip character lists
+  text = text.replace(/\s*Characters:.*$/i, '');
+  // Strip software credits
+  text = text.replace(/\s*Software used:.*$/i, '');
+  // Strip disclaimers
+  text = text.replace(/\s*FOR ENTERTAINMENT PURPOSES.*$/i, '');
+  text = text.replace(/\s*DISCLAIMER:.*$/i, '');
+  // Strip headphone warnings in brackets
+  text = text.replace(/\s*\{[^}]*\}/g, '');
+  text = text.replace(/\s*\[[^\]]*headphone[^\]]*\]/gi, '');
+  // Strip part labels like "[Part 1 of 2]"
+  text = text.replace(/\s*\[Part \d+ of \d+\]/gi, '');
+  // Strip "[Also contains...]" warnings
+  text = text.replace(/\s*\[Also[^\]]*\]/gi, '');
+  // Clean up extra spaces
+  text = text.replace(/\s{2,}/g, ' ').trim();
+
+  return text;
 }
 
 async function main() {
